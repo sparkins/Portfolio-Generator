@@ -1,0 +1,33 @@
+.navbar {
+    /* position: fixed; */
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: firebrick ;
+    vertical-align: auto;
+    height: 50px;
+    opacity: 1;
+    border-color: steelblue;
+    border-style: outset;
+    border-width: 3px;
+}
+
+.header {
+    width: 50%;
+    font-size: 28px;
+    padding-left: 250px;
+    padding-top: 10px;  
+}
+
+.profilePage {
+    float: right;
+    padding-right: 75px;
+    padding-top: 10px;
+}
+
+.projectPage {
+    float: right;
+    padding-right: 75px;
+    padding-top: 10px;
+}
