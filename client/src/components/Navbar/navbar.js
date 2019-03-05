@@ -8,7 +8,7 @@ class Navbar extends React.Component {
     render() {
         return (
                     <Container className="navbar">
-                        <Header className="header" as='a' active>Portfolio Generator</Header>
+                        <Header className="header" as='a'>Portfolio Generator</Header>
                         <Button className="projectPage" as='a'>Projects Page</Button>
                         <Button className="profilePage" as='a'>Profile Page</Button>
                     </Container>
