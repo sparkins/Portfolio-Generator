@@ -1,0 +1,10 @@
+Form {
+    margin-left: 20px;
+    margin-top: 10px;
+    border-style: groove;
+    border-width: 5px;
+    border-color: blue;
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+}
