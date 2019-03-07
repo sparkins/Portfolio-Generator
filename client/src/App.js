@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from "./components/Navbar/navbar";
 import Footer from "./components/Footer/footer";
+import CardExampleCard from './pages/Projects/Test'
 
 
 class App extends Component {
@@ -13,6 +14,8 @@ class App extends Component {
 
         <Navbar />
         <h1>Welcome to the world's best Portfolio Generator</h1>
+
+        <CardExampleCard />
       </div >
       // </Router >
     );
