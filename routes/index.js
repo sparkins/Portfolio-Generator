@@ -6,3 +6,7 @@ var mongojs = require("mongojs");
 app.get('/profile', function(req, res){
     
 })
+
+app.post('/profile', function(req, res){
+    
+})
