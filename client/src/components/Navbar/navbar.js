@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Image, Menu, Button, Header } from 'semantic-ui-react';
+import { Container, Button, Header } from 'semantic-ui-react';
 import './navbar.css';
 
 // Create a sticky navbar that show the title of the game, a dynamic message and the scoreboard
