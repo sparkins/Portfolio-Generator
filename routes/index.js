@@ -1,12 +1,8 @@
-var express = require("express");
-var app = express();
+const router = require("express").Router();
+const userRoutes = require("./users");
 
-var mongojs = require("mongojs");
+//User routes
 
-app.get('/profile', function(req, res){
-    
-})
+router.use("/users", userRoutes);
 
-app.post('/profile', function(req, res){
-    
-})
+module.exports = router;

@@ -1,6 +1,7 @@
 // Dependencies
 const express = require("express");
 const path = require("path");
+const routes = require("./routes");
 var mongojs = require("mongojs");
 var logger = require("morgan");
 var bodyParser = require('body-parser');
@@ -29,6 +30,9 @@ db.on("error", function(error) {
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//Add routes
+app.use(routes);
 // Serve up static assets (usually on heroku)
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
