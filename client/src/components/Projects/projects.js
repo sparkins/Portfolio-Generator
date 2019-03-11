@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './projects.css';
-import { Form, Input, Button } from 'semantic-ui-react';
+import { Form, Input, Button, Modal, TextArea } from 'semantic-ui-react';
 
 
 
@@ -16,7 +16,7 @@ class Projects extends Component {
         />
         <Form.Field
           id='description'
-          control={Input}
+          control={TextArea}
           label='Project Description'
           placeholder='Enter the project description'
         />
@@ -45,8 +45,31 @@ class Projects extends Component {
           content={this.props.submitButton} */}
         {/* /> */}
       </Form>
-    );
-  }
-}
+          );
+        }
+      }
 
 export default Projects;
+
+const ModalBasicExample = () => (
+  <Modal trigger={<Button>Basic Modal</Button>} basic size='small'>
+    <Header icon='archive' content='Archive Old Messages' />
+    <Modal.Content>
+      <p>
+        Your inbox is getting full, would you like us to enable automatic archiving of old messages?
+      </p>
+    </Modal.Content>
+    <Modal.Actions>
+      <Button basic color='red' inverted>
+        <Icon name='remove' /> Delete Project
+      </Button>
+      <Button color='green' inverted>
+        <Icon name='add' /> Add Project
+      </Button>
+    </Modal.Actions>
+  </Modal>
+)
+
+export default ModalBasicExample
+
+
