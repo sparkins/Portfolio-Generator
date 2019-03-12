@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import './about.css';
 import { Form, Input, Button, Modal, TextArea, Grid, card , Image , Icon } from 'semantic-ui-react';
 
 class About extends Component {
@@ -92,29 +93,29 @@ class About extends Component {
     }
     render(){ 
         return (
-<div class="ui container"> 
+<div className="ui container"> 
 
-            <div class="ui clearing segment">
-                <h3 class="ui center aligned blue header"> About Me </h3>
+            <div className="ui clearing segment">
+                <h3 className="ui center aligned blue header"> About Me </h3>
                 </div>
-                <div class="ui grid">
-                <div class="row">
-                    <h3 class="ui center aligned blue header">
+                <div className="ui grid">
+                <div className="row">
+                    <h3 className="ui center aligned blue header">
                                 Let me tell you a few things...
                     </h3> 
                 </div>
             </div>
            
-            <div class="ui grid">
+            <div className="ui grid">
            
-              <div class="row">
-                <div class="three wide column">
-                 <div class="ui card">
-                  <div class="image">
+              <div className="row">
+                <div className="three wide column">
+                 <div className="ui card">
+                  <div className="image">
                  
                         <img src="https://semantic-ui.com/images/avatar2/large/kristy.png" />
-                    <div class="ui small basic icon buttons">
-                        <button class="ui button" onClick={this.imageUrl}><i class="upload icon "> ></i></button>
+                    <div className="ui small basic icon buttons">
+                        <button className="ui button" onClick={this.imageUrl}><i className="upload icon "> ></i></button>
                         
 
                     </div>
@@ -123,31 +124,31 @@ class About extends Component {
                    </div>
                  </div>
                 </div>
-                <div class="ten wide column">
-                    {/* <p><h1 class="ui big"> Mohammed Farahat </h1></p> */}
-                    <div class="ui form">
-                   <div class="field">
+                <div className="ten wide column">
+                    {/* <p><h1 className="ui big"> Mohammed Farahat </h1></p> */}
+                    <div className="ui form">
+                   <div className="field">
                      <label>Enter Your Name</label>
                     <input type="text" placeholder="First Name" onChange={this.firstName} />
                     <input type="text" placeholder="Last Name"  onChange={this.lastName}/>
                     </div>
                     </div>
-                 <div class="ui small basic icon buttons">
-                        <button class="ui button"><i class="edit icon"></i></button>
+                 <div className="ui small basic icon buttons">
+                        <button className="ui button"><i className="edit icon"></i></button>
                  </div>
                 </div>
 
-                <div class="three wide column">
+                <div className="three wide column">
                    
                 </div>
              </div>
             
-             <div class="row">
-                <div class="three wide column">
+             <div className="row">
+                <div className="three wide column">
                 </div>
-                <div class="ten wide column">           
-                  <div class="ui form">
-                    <div class="field">
+                <div className="ten wide column">           
+                  <div className="ui form">
+                    <div className="field">
                       <label>BIO</label>
                         <textarea placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Officiis laborum. Officia qui natus inventore 
@@ -156,15 +157,15 @@ class About extends Component {
                             consequuntur ad." onChange={this.bio}></textarea>
                     </div>
                    </div>
-                    <button class="ui button"><i class="edit icon"></i></button>
+                    <button className="ui button"><i className="edit icon"></i></button>
                 </div>        
             </div>
       
-            <div class="row">
-                <div class="tow wide column"></div>
-                 <div class="four wide column">
-                  <div class="ui form">
-                   <div class="field">
+            <div className="row">
+                <div className="tow wide column"></div>
+                 <div className="four wide column">
+                  <div className="ui form">
+                   <div className="field">
                      <label>Experience</label>
                       <textarea placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                                    Officiis laborum. Officia qui natus inventore 
@@ -173,12 +174,12 @@ class About extends Component {
                                                    consequuntur ad." onChange={this.experience} ></textarea>
                     </div>
                    </div>
-                    <button class="ui button"><i class="edit icon"></i></button>
+                    <button className="ui button"><i className="edit icon"></i></button>
             </div>
-            <div class="one wide column"></div>
-              <div class="four wide column">
-               <div class="ui form">
-                <div class="field">
+            <div className="one wide column"></div>
+              <div className="four wide column">
+               <div className="ui form">
+                <div className="field">
                  <label>Skills</label>
                   <textarea placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                                    Officiis laborum. Officia qui natus inventore 
@@ -187,12 +188,12 @@ class About extends Component {
                                                    consequuntur ad." onChange={this.skills}></textarea>
                 </div>
                </div>
-                   <button class="ui button"><i class="edit icon"></i></button>
+                   <button className="ui button"><i className="edit icon"></i></button>
             </div>
-             <div class="one wide column"></div>
-              <div class="four wide column">
-               <div class="ui form">
-                <div class="field">
+             <div className="one wide column"></div>
+              <div className="four wide column">
+               <div className="ui form">
+                <div className="field">
                  <label>Projects outlines</label>
                   <textarea placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                                    Officiis laborum. Officia qui natus inventore 
@@ -201,16 +202,16 @@ class About extends Component {
                                                    consequuntur ad." onChange={this.projectsOutlines} ></textarea>
                 </div>
                </div>
-                 <button class="ui button"><i class="edit icon"></i></button>
+                 <button className="ui button"><i className="edit icon"></i></button>
               </div>
               </div>
          
               </div>
-        <div class="ui clearing segment">
-        {/* <form class="ui massive form" onSubmit={this.genratePortofolio}> */}
-            <button class="ui primary fluid button" onClick={this.genratePortofolio}> Genrate </button>
+        <div className="ui clearing segment">
+        {/* <form className="ui massive form" onSubmit={this.genratePortofolio}> */}
+            <button className="ui primary fluid button" onClick={this.genratePortofolio}> Genrate </button>
            {/* </form> */}
-            <h3 class="ui center aligned blue header">CopyRight@2019 </h3>
+            {/* <h3 className="ui center aligned blue header">CopyRight@2019 </h3> */}
         </div> 
 
    
