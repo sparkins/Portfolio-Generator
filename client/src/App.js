@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar/navbar";
+import Footer from './components/Footer/footer';
 // import Projects from "./components/Projects/projects";
 import {AddProjectModal} from "./components/Projects/projects";
-// import Footer from "./components/Footer/footer";
+import ProjectCards from './pages/projects/projectPage';
 
 
 class App extends Component {
@@ -15,8 +16,10 @@ class App extends Component {
 
         <Navbar />
         <h1>Welcome to the world's best Portfolio Generator</h1>
-        <AddProjectModal />
+        {/* <AddProjectModal /> */}
         {/* <Projects /> */}
+        {/* <ProjectCards /> */}
+        <Footer />
       </div >
       // </Router >
     );

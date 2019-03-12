@@ -1,0 +1,22 @@
+.footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #008b8b ;
+    vertical-align: auto;
+    height: 30px;
+    opacity: 1;
+    border-color: steelblue;
+    border-style: outset;
+    border-width: 3px;
+}
+
+.footer-text {
+    width: 100%;
+    font-size: 12px;
+    padding-top: 5px;  
+    text-align: center;
+}
