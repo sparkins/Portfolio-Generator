@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar/navbar";
-import Projects from "./components/Projects/projects";
+// import Projects from "./components/Projects/projects";
+import {AddProjectModal} from "./components/Projects/projects";
 // import Footer from "./components/Footer/footer";
 
 
@@ -14,7 +15,8 @@ class App extends Component {
 
         <Navbar />
         <h1>Welcome to the world's best Portfolio Generator</h1>
-        <Projects />
+        <AddProjectModal />
+        {/* <Projects /> */}
       </div >
       // </Router >
     );
