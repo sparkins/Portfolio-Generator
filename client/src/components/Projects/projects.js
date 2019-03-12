@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './projects.css';
-import { Form, Input, Button, Modal, TextArea } from 'semantic-ui-react';
+import { Form, Input, Button, Header, Icon, Modal, TextArea } from 'semantic-ui-react';
 
 
 
@@ -73,3 +73,21 @@ class Projects extends Component {
 // export default ModalBasicExample
 
 
+export const AddProjectModal = () => (
+  <Modal trigger={<Button>Add New Project</Button>} basic size='small'>
+    <Header icon='archive' content='Add New Project' />
+    <Modal.Content>
+      <p>
+        This is a test modal window
+      </p>
+    </Modal.Content>
+    <Modal.Actions>
+      <Button basic color='red' inverted>
+        <Icon name='remove' /> Cancel
+      </Button>
+      <Button color='green' inverted>
+        <Icon name='add' /> Add Project
+      </Button>
+    </Modal.Actions>
+  </Modal>
+)
