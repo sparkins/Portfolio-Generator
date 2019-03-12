@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from "./components/Navbar/navbar";
 import Projects from "./components/Projects/projects";
+import About from "./components/pages/about"
 // import Footer from "./components/Footer/footer";
 
 
@@ -14,7 +15,8 @@ class App extends Component {
 
         <Navbar />
         <h1>Welcome to the world's best Portfolio Generator</h1>
-        <Projects />
+        {/* <Projects /> */}
+        <About />
       </div >
       // </Router >
     );

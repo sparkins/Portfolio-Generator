@@ -49,27 +49,27 @@ class Projects extends Component {
         }
       }
 
-export default Projects;
+ export default Projects;
 
-const ModalBasicExample = () => (
-  <Modal trigger={<Button>Basic Modal</Button>} basic size='small'>
-    <Header icon='archive' content='Archive Old Messages' />
-    <Modal.Content>
-      <p>
-        Your inbox is getting full, would you like us to enable automatic archiving of old messages?
-      </p>
-    </Modal.Content>
-    <Modal.Actions>
-      <Button basic color='red' inverted>
-        <Icon name='remove' /> Delete Project
-      </Button>
-      <Button color='green' inverted>
-        <Icon name='add' /> Add Project
-      </Button>
-    </Modal.Actions>
-  </Modal>
-)
+// const ModalBasicExample = () => (
+//   <Modal trigger={<Button>Basic Modal</Button>} basic size='small'>
+//     <Header icon='archive' content='Archive Old Messages' />
+//     <Modal.Content>
+//       <p>
+//         Your inbox is getting full, would you like us to enable automatic archiving of old messages?
+//       </p>
+//     </Modal.Content>
+//     <Modal.Actions>
+//       <Button basic color='red' inverted>
+//         <Icon name='remove' /> Delete Project
+//       </Button>
+//       <Button color='green' inverted>
+//         <Icon name='add' /> Add Project
+//       </Button>
+//     </Modal.Actions>
+//   </Modal>
+// )
 
-export default ModalBasicExample
+// export default ModalBasicExample
 
 
