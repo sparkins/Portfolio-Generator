@@ -1,9 +1,13 @@
 const router = require("express").Router();
 
-router.route("/")
-    .render("hello");
+router.get('/', function (req, res) {
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+    res.end('Hello World!')
+});
 
-router.route("/users")
-    .render("hello, user");
+router.get('/users', function (req, res) {
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+    res.end('Hello World!')
+});
 
 module.exports = router;
