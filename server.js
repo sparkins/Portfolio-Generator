@@ -17,7 +17,7 @@ app.use(bodyParser());
 
 // Database configuration
 var databaseUrl = process.env.MONGODB_URI || "portfoliogenerator_db";
-var collections = ["projects", "users"];
+var collections = ["projects", "users" ,"about"];
 
 // Hook mongojs config to db variable
 var db = mongojs(databaseUrl , collections);
@@ -45,6 +45,26 @@ app.use(routes);
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
+
+  //allow the api to be accessed by other apps
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+  next();
+});
+
+app.post('/about', function(req, res){ 
+   db.about.insert(req.body, function(error, savedAbout) {
+        if (error) {
+          res.send(error);
+        }else {
+          console.log(savedAbout)
+          res.json(savedAbout);
+        }
+      });
+});
+
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
