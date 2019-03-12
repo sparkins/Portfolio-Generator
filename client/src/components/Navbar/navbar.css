@@ -4,16 +4,17 @@
     color: white;
     font-weight: bold;
     font-size: 20px;
-    background-color: firebrick ;
+    background-color: #008b8b ;
     vertical-align: auto;
     height: 50px;
     opacity: 1;
     border-color: steelblue;
     border-style: outset;
     border-width: 3px;
+    padding-top: 10px;  
 }
 
-.header {
+.nav-header {
     width: 50%;
     font-size: 28px;
     padding-left: 250px;
