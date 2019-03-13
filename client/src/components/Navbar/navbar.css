@@ -1,10 +1,9 @@
 .navbar {
     /* position: fixed; */
-    width: 100%;
-    color: white;
+    width: 100% !important;
     font-weight: bold;
     font-size: 20px;
-    background-color: firebrick ;
+    background-color: #008b8b ;
     vertical-align: auto;
     height: 50px;
     opacity: 1;
@@ -13,11 +12,11 @@
     border-width: 3px;
 }
 
-.header {
-    width: 50%;
-    font-size: 28px;
-    padding-left: 250px;
-    padding-top: 10px;  
+.nav-header {
+    /* width: 50%; */
+    color: white !important;
+    font-size: 28px !important;
+    padding-left: 250px !important;
 }
 
 .profilePage {
