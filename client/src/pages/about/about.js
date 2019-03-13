@@ -59,7 +59,7 @@ class About extends Component {
 
     }    
    
-    genratePortofolio = (e)=>{
+    generatePortofolio = (e)=>{
         e.preventDefault()
                 alert("starting....");
     
@@ -208,8 +208,8 @@ class About extends Component {
          
               </div>
         <div className="ui clearing segment">
-        {/* <form className="ui massive form" onSubmit={this.genratePortofolio}> */}
-            <button className="ui primary fluid button" onClick={this.genratePortofolio}> Genrate </button>
+        {/* <form className="ui massive form" onSubmit={this.generatePortofolio}> */}
+            <button className="ui primary fluid button" onClick={this.generatePortofolio}> Generate </button>
            {/* </form> */}
             {/* <h3 className="ui center aligned blue header">CopyRight@2019 </h3> */}
         </div> 
