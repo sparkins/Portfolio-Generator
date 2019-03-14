@@ -79,7 +79,11 @@ class About extends Component {
         //imageUrl:          this.state.imageUrl
          }
     
+<<<<<<< HEAD
         fetch("/users", {
+=======
+        fetch("/about", {
+>>>>>>> 4ce2f81707293e3c0e56929a9782e8f8164665f0
           method: 'POST',
           headers: 
           {
@@ -98,9 +102,10 @@ class About extends Component {
     }
     render(){ 
         return (
-<div className="ui container"> 
 
-            <div className="ui clearing segment">
+            <div className="ui container"> 
+
+                <div className="ui clearing segment">
                 <h3 className="ui center aligned blue header"> About Me </h3>
                 </div>
                 <div className="ui grid">
@@ -213,13 +218,10 @@ class About extends Component {
          
               </div>
         <div className="ui clearing segment">
-        {/* <form className="ui massive form" onSubmit={this.generatePortofolio}> */}
             <button className="ui primary fluid button" onClick={this.generatePortofolio}> Generate </button>
            {/* </form> */}
             {/* <h3 className="ui center aligned blue header">CopyRight@2019 </h3> */}
         </div> 
-
-   
          
 </div>
 

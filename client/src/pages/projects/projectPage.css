@@ -1,0 +1,29 @@
+
+#portfolio-container {
+    background-color: #f5f3f3;
+    border: none;
+}
+
+.projectImg {
+    border-width: 0;
+    border-bottom: 0.5px;
+    border-bottom-color: #cec6c6;
+    border-bottom-style: inset;
+}
+
+.projectCardHeader {
+    border-width: 0;
+    border-bottom: 0.5px;
+    border-bottom-color: #cec6c6;
+    border-bottom-style: inset;
+}
+
+.projectDesc {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px; 
+}
+
+.project-buttons {
+
+}
