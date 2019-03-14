@@ -2,7 +2,8 @@
 const express = require("express");
 const path = require("path");
 const routes = require("./routes");
-var mongojs = require("mongojs");
+// var mongojs = require("mongojs");
+const mongoose = require('mongoose');
 var logger = require("morgan");
 var bodyParser = require('body-parser');
 
@@ -18,16 +19,18 @@ app.use(bodyParser());
 
 
 // Database configuration
-var databaseUrl = process.env.MONGODB_URI || "portfoliogenerator_db";
-var collections = ["projects", "users"];
+// var databaseUrl = process.env.MONGODB_URI || "portfoliogenerator_db";
+// var collections = ["projects", "users"];
 
 // Hook mongojs config to db variable
-var db = mongojs(databaseUrl , collections);
+// var db = mongojs(databaseUrl , collections);
 
 // Log any mongojs errors to console
-db.on("error", function(error) {
-  console.log("Database Error:", error);
-});
+// db.on("error", function(error) {
+//   console.log("Database Error:", error);
+// });
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/portfoliogenerator_db",{ useNewUrlParser: true } );
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -121,6 +124,11 @@ app.post('/signup', function(req, res) {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+app.get('/', (req, res) => {
+  console.log('hi' )
+  res.send("hi");
+})
 //Add routes
 app.use(routes);
 // Serve up static assets (usually on heroku)

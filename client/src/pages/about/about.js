@@ -79,23 +79,29 @@ class About extends Component {
         //imageUrl:          this.state.imageUrl
          }
     
-        fetch("http://localhost:3001/about", {
+        fetch("/users", {
           method: 'POST',
           headers: 
           {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
-             body: JSON.stringify(aboutOb)
-          })   
-        console.log(aboutOb)
+          body: JSON.stringify(aboutOb)
+          }).then(res => res.json())
+          .then(res => {
+              fetch("/users")
+              .then(res => res.json())
+              .then(users => this.setState({users}))
+          }) 
+        console.log(aboutOb);
 
     }
     render(){ 
         return (
-<div className="ui container"> 
 
-            <div className="ui clearing segment">
+            <div className="ui container"> 
+
+                <div className="ui clearing segment">
                 <h3 className="ui center aligned blue header"> About Me </h3>
                 </div>
                 <div className="ui grid">
@@ -208,13 +214,10 @@ class About extends Component {
          
               </div>
         <div className="ui clearing segment">
-        {/* <form className="ui massive form" onSubmit={this.generatePortofolio}> */}
             <button className="ui primary fluid button" onClick={this.generatePortofolio}> Generate </button>
            {/* </form> */}
             {/* <h3 className="ui center aligned blue header">CopyRight@2019 </h3> */}
         </div> 
-
-   
          
 </div>
 
