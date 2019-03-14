@@ -79,11 +79,7 @@ class About extends Component {
         //imageUrl:          this.state.imageUrl
          }
     
-<<<<<<< HEAD
         fetch("/users", {
-=======
-        fetch("/about", {
->>>>>>> 4ce2f81707293e3c0e56929a9782e8f8164665f0
           method: 'POST',
           headers: 
           {
