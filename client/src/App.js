@@ -4,9 +4,10 @@ import './App.css';
 import Navbar from "./components/Navbar/navbar";
 import Footer from './components/Footer/footer';
 // import Projects from "./components/Projects/projects";
-import {AddProjectModal} from "./components/Projects/projects";
+// import {AddProjectModal} from "./components/Projects/projects";
 import ProjectCards from './pages/projects/projectPage';
 import About from './pages/about/about';
+import ProjectDisplay from './pages/projects/projectPage';
 
 
 class App extends Component {
@@ -17,10 +18,11 @@ class App extends Component {
 
         <Navbar />
         {/* <h1>Welcome to the world's best Portfolio Generator</h1> */}
-        <About />
+        {/* <About /> */}
         {/* <AddProjectModal /> */}
         {/* <Projects /> */}
         {/* <ProjectCards /> */}
+        <ProjectDisplay />
         <Footer />
       </div >
       // </Router >

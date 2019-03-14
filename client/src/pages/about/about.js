@@ -93,9 +93,10 @@ class About extends Component {
     }
     render(){ 
         return (
-<div className="ui container"> 
 
-            <div className="ui clearing segment">
+            <div className="ui container"> 
+
+                <div className="ui clearing segment">
                 <h3 className="ui center aligned blue header"> About Me </h3>
                 </div>
                 <div className="ui grid">
@@ -213,8 +214,6 @@ class About extends Component {
            {/* </form> */}
             {/* <h3 className="ui center aligned blue header">CopyRight@2019 </h3> */}
         </div> 
-
-   
          
 </div>
 
