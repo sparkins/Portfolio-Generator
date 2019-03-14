@@ -79,7 +79,7 @@ class About extends Component {
         //imageUrl:          this.state.imageUrl
          }
     
-        fetch("http://localhost:3001/about", {
+        fetch("/about", {
           method: 'POST',
           headers: 
           {
@@ -210,7 +210,7 @@ class About extends Component {
               </div>
         <div className="ui clearing segment">
         {/* <form className="ui massive form" onSubmit={this.genratePortofolio}> */}
-            <button className="ui primary fluid button" onClick={this.genratePortofolio}> Genrate </button>
+            <button className="ui primary fluid button" onClick={this.generatePortofolio}> Generate </button>
            {/* </form> */}
             {/* <h3 className="ui center aligned blue header">CopyRight@2019 </h3> */}
         </div> 

@@ -1,5 +1,5 @@
 export const _loadProjects = () => {
-	return fetch("http://localhost:3001/Projects", {
+	return fetch("/Projects", {
         method: "GET",
         headers: {
           'Accept': 'application/json',
@@ -9,7 +9,7 @@ export const _loadProjects = () => {
 }
 
 export const _createProject = (name, description, image, github, launchapp) => {
-	return fetch("http://localhost:3001/Projects", {
+	return fetch("/Projects", {
 	    method: 'POST',
 	    headers: {
 	      'Accept': 'application/json',
@@ -20,7 +20,7 @@ export const _createProject = (name, description, image, github, launchapp) => {
 }
 
 export const _updateProject = (updatedId, name, description, image, github, launchapp) => {
-	return fetch(`http://localhost:3001/Projects/update/${updatedId}`, {
+	return fetch(`/Projects/update/${updatedId}`, {
 	    method: 'POST',
 	    headers: {
 	      'Accept': 'application/json',
@@ -31,7 +31,7 @@ export const _updateProject = (updatedId, name, description, image, github, laun
 }
 
 export const _deleteProject = (id) => {
-    return fetch(`http://localhost:3001/Projects/${id}`, {
+    return fetch(`/Projects/${id}`, {
         method: "POST",
         headers: {
           'Accept': 'application/json',
