@@ -79,16 +79,21 @@ class About extends Component {
         //imageUrl:          this.state.imageUrl
          }
     
-        fetch("/about", {
+        fetch("/users", {
           method: 'POST',
           headers: 
           {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
-             body: JSON.stringify(aboutOb)
-          })   
-        console.log(aboutOb)
+          body: JSON.stringify(aboutOb)
+          }).then(res => res.json())
+          .then(res => {
+              fetch("/users")
+              .then(res => res.json())
+              .then(users => this.setState({users}))
+          }) 
+        console.log(aboutOb);
 
     }
     render(){ 
