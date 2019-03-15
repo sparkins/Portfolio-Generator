@@ -2,18 +2,18 @@
 import React, { Component } from 'react';
 import { Card, Image, Button, Grid } from 'semantic-ui-react'
 import './projectPage.css';
-import {_loadProjects, _createProject, _deleteProject, _updateProject} from '../../services/ProjectService'
+import { _loadProjects, _createProject, _deleteProject, _updateProject } from '../../services/ProjectService'
 
 export const projectCards = props => (
 
-    <Card.Group>
-        
+  <Card.Group>
+
     <Card>
       <Card.Content>
-        <Image className="projectImg" size='mini' 
+        <Image className="projectImg" size='mini'
           alt={props.project.image}
           src={require(`./../${props.project.image}`)}
-          />
+        />
         <Card.Header className="projectCardHeader"> {props.project.name}</Card.Header>
         {/* <Card.Meta>New Game</Card.Meta> */}
         <Card.Description className="projectDesc">{props.project.description}</Card.Description>
@@ -35,14 +35,14 @@ export const projectCards = props => (
 
 class ProjectDisplay extends Component {
   state = {
-    projects: [{name: "Clicky", description: "A memory game", image: "/images/emoji-nerd.png" }, {name: "Trivia", description: "World Cup themed trivia game"}, {name: "giffy", description: "Using api's to load gifs"}],
+    projects: [{ name: "Clicky", description: "A memory game", image: "/images/emoji-nerd.png" }, { name: "Trivia", description: "World Cup themed trivia game", image: "/images/TriviaGameImage.png" }, { name: "giffy", description: "Using api's to load gifs", image: "/images/emoji-nerd.png" }],
     name: "",
     description: "",
     image: "",
     github: "",
     launchapp: ""
   }
-  
+
   getProjects = (_loadProjects) => {
 
   }
@@ -53,9 +53,9 @@ class ProjectDisplay extends Component {
     let description = event.target.children[1].value;
 
     return _createProject(name, description).then(ap => {
-        let projects = [...this.state.projects, ap];
-        this.setState({projects})
-      })
+      let projects = [...this.state.projects, ap];
+      this.setState({ projects })
+    })
   }
 
   deleteProject = (event, _deleteProject) => {
@@ -63,10 +63,10 @@ class ProjectDisplay extends Component {
 
     return _deleteProject(id).then(deletedProjectId => {
 
-            let projects = this.state.projects.filter(project => project._id !== deletedProjectId)
+      let projects = this.state.projects.filter(project => project._id !== deletedProjectId)
 
-            this.setState({projects})
-          })
+      this.setState({ projects })
+    })
   }
 
   editProject = (_updateProject) => {
@@ -77,23 +77,30 @@ class ProjectDisplay extends Component {
       <div>
         <Grid
           className="projectsGrid"
-          style={{"margin": "5%"}}>
+          style={{ "margin": "5%" }}>
           <Grid.Row columns={3}>
-          {this.state.projects.map((project, i) => (
-            <Grid.Column key={i}>
-            <h1>{project.name}</h1>
-            <p>{project.description}</p>
-            <img src={project.image}></img>
-            {/* <projectCards className='projectCards' project={project} */}
-            
-            </Grid.Column>
-          ))}
+            {this.state.projects.map((project, i) => (
+              <Grid.Column key={i}>
+                <Card>
+                  <Card.Content>
+                      <Image className="projectImg" floated='right' size='mini'
+                        alt={project.image}
+                        src={project.image} />
+                      <Card.Header className="projectCardHeader"> {project.name}</Card.Header>
+                    <Card.Description className="projectDesc">Description: {project.description}</Card.Description>
+                  </Card.Content>
+                  <div className='ui two buttons'>
+                    <Button basic color='blue' href="https://github.com/sparkins/">GitHub</Button>
+                    <Button basic color='blue' href="https://sparkins.github.io/ClickyGame/">Launch App</Button>
+                  </div>
+                </Card>
+              </Grid.Column>
+            ))}
           </Grid.Row>
-          </Grid>
+        </Grid>
       </div>
     )
   }
 }
 
 export default ProjectDisplay;
- 
