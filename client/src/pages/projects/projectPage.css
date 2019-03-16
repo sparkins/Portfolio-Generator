@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
 
 #portfolio-container {
-    background-color: #f5f3f3;
+    /* background-color: #f5f3f3; */
+    background-image: url(/images/background.png);
     border: none;
 }
 
@@ -12,6 +14,11 @@
 }
 
 .projectCardHeader {
+    font-family: 'Courgette', cursive !important;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px !important;
     border-width: 0;
     border-bottom: 0.5px;
     border-bottom-color: #cec6c6;
@@ -19,11 +26,6 @@
 }
 
 .projectDesc {
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px; 
-}
-
-.project-buttons {
-
+    /* text-align: center; */
+    font-size: 14px; 
 }

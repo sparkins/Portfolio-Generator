@@ -4,7 +4,7 @@ import { Form, Input, Button, Header, Icon, Modal, TextArea } from 'semantic-ui-
 
 
 
-class Projects extends Component {
+class AddProject extends Component {
   render() {
     return (
       <Form className='projectForm' id={this.props.cssId} onSubmit={this.props.func}>
@@ -49,7 +49,7 @@ class Projects extends Component {
         }
       }
 
-export default Projects;
+export default AddProject;
 
 export const AddProjectModal = () => (
   <Modal trigger={<Button>Add New Project</Button>} basic size='small'>

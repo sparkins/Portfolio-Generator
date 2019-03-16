@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
 .navbar {
     /* position: fixed; */
     width: 100% !important;
+    font-family: 'Courgette', cursive;
     font-weight: bold;
     font-size: 20px;
     background-color: #008b8b ;
     vertical-align: auto;
-    height: 50px;
+    height: 60px;
     opacity: 1;
     border-color: steelblue;
     border-style: outset;
@@ -15,18 +18,21 @@
 .nav-header {
     /* width: 50%; */
     color: white !important;
-    font-size: 28px !important;
+    font-size: 40px !important;
     padding-left: 250px !important;
+    font-family: 'Courgette', cursive !important;
 }
 
 .profilePage {
     float: right;
+    color: white !important;
     padding-right: 75px;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 .projectPage {
     float: right;
+    color: white !important;
     padding-right: 75px;
-    padding-top: 10px;
+    padding-top: 15px;
 }

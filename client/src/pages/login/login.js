@@ -11,11 +11,7 @@ class Login extends Component {
       
           logged_in: false
         }
-    
-        
       }
-    
-      
     
       getToken = () => {
         return localStorage.getItem('token');
@@ -24,9 +20,6 @@ class Login extends Component {
       deletePet = (event) => {
     
         //in button below add a data attribute with the pet's id
-    
-       
-    
        
       }
     
@@ -64,7 +57,7 @@ class Login extends Component {
         let password = inputs[1].value;
         let passwordConf = inputs[2].value;
     
-        if (password == passwordConf){
+        if (password === passwordConf){
     
           return _signUp(username, password).then(res => {
             console.log(res);
