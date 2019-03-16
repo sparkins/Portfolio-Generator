@@ -1,4 +1,3 @@
-// import React from 'react'
 import React, { Component } from 'react';
 import { Card, Image, Button, Grid } from 'semantic-ui-react'
 import './projectPage.css';
@@ -8,7 +7,7 @@ export const projectCards = props => (
 
   <Card.Group>
 
-    <Card>
+    <Card className="projectCards">
       <Card.Content>
         <Image className="projectImg" size='mini'
           alt={props.project.image}
@@ -23,7 +22,7 @@ export const projectCards = props => (
           <Button basic color='blue' href={require(`${props.project.github}`)}>
             GitHub
           </Button>
-          <Button basic color='blue' href={require(`${props.project.launchapp}`)}>>
+          <Button basic color='blue' href={require(`${props.project.launchapp}`)}>
             Launch App
           </Button>
         </div>
@@ -62,9 +61,7 @@ class ProjectDisplay extends Component {
     var id = event.target.getAttribute('data-id');
 
     return _deleteProject(id).then(deletedProjectId => {
-
       let projects = this.state.projects.filter(project => project._id !== deletedProjectId)
-
       this.setState({ projects })
     })
   }
@@ -78,7 +75,7 @@ class ProjectDisplay extends Component {
         <Grid
           className="projectsGrid"
           style={{ "margin": "5%" }}>
-          <Grid.Row columns={3}>
+          <Grid.Row columns={4}>
             {this.state.projects.map((project, i) => (
               <Grid.Column key={i}>
                 <Card>
@@ -92,6 +89,10 @@ class ProjectDisplay extends Component {
                   <div className='ui two buttons'>
                     <Button basic color='blue' href="https://github.com/sparkins/">GitHub</Button>
                     <Button basic color='blue' href="https://sparkins.github.io/ClickyGame/">Launch App</Button>
+                  </div>
+                  <div className='ui two buttons'>
+                    <Button basic color='green'>Edit Project</Button>
+                    <Button basic color='red'>Delete Project</Button>
                   </div>
                 </Card>
               </Grid.Column>
