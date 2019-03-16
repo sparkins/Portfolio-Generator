@@ -10,7 +10,7 @@ module.exports = {
         })
     },
     addNewUser: (req, res) => {
-        db.Users.insert(req.body, function(error, savedUser) {
+        db.Users.insertOne(req.body, function(error, savedUser) {
             if (error) {
                 res.send(error);
             } else {
