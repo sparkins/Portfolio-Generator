@@ -1,35 +1,36 @@
 import React, { Component } from 'react';
-import { Card, Image, Button, Grid } from 'semantic-ui-react'
+import { Card, Image, Button, Grid, Container, Form, Input, TextArea } from 'semantic-ui-react'
 import './projectPage.css';
+import {AddProject} from '../../components/Projects/projectForm'
 import { _loadProjects, _createProject, _deleteProject, _updateProject } from '../../services/ProjectService'
 
-export const projectCards = props => (
+// export const projectCards = props => (
 
-  <Card.Group>
+//   <Card.Group>
 
-    <Card className="projectCards">
-      <Card.Content>
-        <Image className="projectImg" size='mini'
-          alt={props.project.image}
-          src={require(`./../${props.project.image}`)}
-        />
-        <Card.Header className="projectCardHeader"> {props.project.name}</Card.Header>
-        <Card.Description className="projectDesc">{props.project.description}</Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <div className='project-buttons'>
-          <Button basic color='blue' href={require(`${props.project.github}`)}>
-            GitHub
-          </Button>
-          <Button basic color='blue' href={require(`${props.project.launchapp}`)}>
-            Launch App
-          </Button>
-        </div>
-      </Card.Content>
-    </Card>
-  </Card.Group>
+//     <Card className="projectCards">
+//       <Card.Content>
+//         <Image className="projectImg" size='mini'
+//           alt={props.project.image}
+//           src={require(`./../${props.project.image}`)}
+//         />
+//         <Card.Header className="projectCardHeader"> {props.project.name}</Card.Header>
+//         <Card.Description className="projectDesc">{props.project.description}</Card.Description>
+//       </Card.Content>
+//       <Card.Content extra>
+//         <div className='project-buttons'>
+//           <Button basic color='blue' href={require(`${props.project.github}`)}>
+//             GitHub
+//           </Button>
+//           <Button basic color='blue' href={require(`${props.project.launchapp}`)}>
+//             Launch App
+//           </Button>
+//         </div>
+//       </Card.Content>
+//     </Card>
+//   </Card.Group>
 
-)
+// )
 
 class ProjectDisplay extends Component {
   state = {
@@ -39,13 +40,14 @@ class ProjectDisplay extends Component {
     description: "",
     image: "",
     github: "",
-    launchapp: ""
+    launchapp: "",
+    edit: true
   }
 
   componentDidMount() {
-    fetch("/allprojects") 
-        .then(res => res.json())
-        .then(projects => this.setState({projects}))
+    fetch("/allprojects")
+      .then(res => res.json())
+      .then(projects => this.setState({ projects }))
   }
 
   getProjects = (_loadProjects) => {
@@ -76,20 +78,65 @@ class ProjectDisplay extends Component {
 
   }
   render() {
+
     return (
-      <div>
-        <Grid
+      <Grid>
+        <Grid.Row columns={5}
           className="projectsGrid"
           style={{ "margin": "5%" }}>
-          <Grid.Row columns={4}>
+          
+          <Grid.Column floated='left' color='olive'>
+          {/* <AddProject /> */}
+            <Form className='projectForm' id={this.props.cssId} onSubmit={this.props.func}>
+              <h2>Add a New Project</h2>
+              <Form.Field
+                id='name'
+                control={Input}
+                label='Project Name'
+                placeholder='Enter project Name'
+              />
+              <Form.Field
+                id='description'
+                control={TextArea}
+                label='Project Description'
+                placeholder='Enter the project description'
+              />
+              <Form.Field
+                id='image'
+                control={Input}
+                label='Image Link'
+                placeholder='Enter url to your image'
+              />
+              <Form.Field
+                id='github'
+                control={Input}
+                label='Github Link'
+                placeholder="Enter the project's github url"
+              />
+              <Form.Field
+                id='launchapp'
+                control={Input}
+                label='App Link'
+                placeholder='Enter the url to launch your app'
+              />
+              <Button primary>Add Project</Button>
+              {/* id='project-submit'
+                control={Button}
+                label='Submit'
+                content={this.props.submitButton} */}
+              
+             </Form>
+            </Grid.Column>
+
+            {/* <Grid.Row columns={4}> */}
             {this.state.projects.map((project, i) => (
               <Grid.Column key={i}>
                 <Card>
                   <Card.Content>
-                      <Image className="projectImg" floated='right' size='mini'
-                        alt={project.image}
-                        src={project.image} />
-                      <Card.Header className="projectCardHeader"> {project.name}</Card.Header>
+                    <Image className="projectImg" floated='right' size='mini'
+                      alt={project.image}
+                      src={project.image} />
+                    <Card.Header className="projectCardHeader"> {project.name}</Card.Header>
                     <Card.Description className="projectDesc">Description: {project.description}</Card.Description>
                   </Card.Content>
                   <div className='ui two buttons'>
@@ -104,8 +151,7 @@ class ProjectDisplay extends Component {
               </Grid.Column>
             ))}
           </Grid.Row>
-        </Grid>
-      </div>
+      </Grid>
     )
   }
 }
