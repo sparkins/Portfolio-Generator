@@ -29,6 +29,8 @@ app.use(bodyParser());
 // db.on("error", function(error) {
 //   console.log("Database Error:", error);
 // });
+// Require all models
+var db = require("./models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/portfoliogenerator_db",{ useNewUrlParser: true } );
 
@@ -129,6 +131,14 @@ app.get('/', (req, res) => {
   console.log('hi' )
   res.send("hi");
 })
+
+app.get('/allprojects', function(req, res){
+	db.Projects.find({}, function(error, result){
+      //result is an array
+	    res.json(result);
+	});
+});
+
 //Add routes
 app.use(routes);
 // Serve up static assets (usually on heroku)

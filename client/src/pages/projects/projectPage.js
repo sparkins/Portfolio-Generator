@@ -14,7 +14,6 @@ export const projectCards = props => (
           src={require(`./../${props.project.image}`)}
         />
         <Card.Header className="projectCardHeader"> {props.project.name}</Card.Header>
-        {/* <Card.Meta>New Game</Card.Meta> */}
         <Card.Description className="projectDesc">{props.project.description}</Card.Description>
       </Card.Content>
       <Card.Content extra>
@@ -34,12 +33,19 @@ export const projectCards = props => (
 
 class ProjectDisplay extends Component {
   state = {
-    projects: [{ name: "Clicky", description: "A memory game", image: "/images/emoji-nerd.png" }, { name: "Trivia", description: "World Cup themed trivia game", image: "/images/TriviaGameImage.png" }, { name: "giffy", description: "Using api's to load gifs", image: "/images/emoji-nerd.png" }],
+    // projects: [{ name: "Clicky", description: "A memory game", image: "/images/emoji-nerd.png" }, { name: "Trivia", description: "World Cup themed trivia game", image: "/images/TriviaGameImage.png" }, { name: "giffy", description: "Using api's to load gifs", image: "/images/emoji-nerd.png" }],
+    projects: [],
     name: "",
     description: "",
     image: "",
     github: "",
     launchapp: ""
+  }
+
+  componentDidMount() {
+    fetch("/allprojects") 
+        .then(res => res.json())
+        .then(projects => this.setState({projects}))
   }
 
   getProjects = (_loadProjects) => {

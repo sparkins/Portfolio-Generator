@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import './projects.css';
+import './projectForm.css';
 import { Form, Input, Button, Header, Icon, Modal, TextArea } from 'semantic-ui-react';
-
-
 
 class AddProject extends Component {
   render() {
