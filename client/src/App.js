@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/Navbar/navbar";
 import Footer from './components/Footer/footer';
-import Projects from "./components/Projects/projects";
+import Projects from "./components/Projects/projectForm";
 // import {AddProjectModal} from "./components/Projects/projects";
 import ProjectCards from './pages/projects/projectPage';
 import About from './pages/about/about';
@@ -11,20 +11,25 @@ import Login from './pages/login/login';
 import ProjectDisplay from './pages/projects/projectPage';
 
 class App extends Component {
+
+  // componentDidMount() {
+  //   fetch("/projects") 
+  //       .then(res => res.json())
+  //       .then(projects => this.setState({projects}))
+  // }
+
   render() {
     return (
       <Router>
         <div >
           <Navbar />
-          <ProjectDisplay />
           <Switch> 
 
           <Route path="/login" component={Login} />
-          {/* <h1>Welcome to the world's best Portfolio Generator</h1> */}
           <Route exact path = "/profile" component = {About} />
-          {/* <AddProjectModal /> */}
-          <Route exact path = "/projects" component = {Projects} />
-          
+          <Route exact path = "/projects" component = {ProjectDisplay} />
+          {/* <Route exact path = "/addProject" component = {addProject} /> */}
+
           </Switch>
           <Footer />
         </div >
