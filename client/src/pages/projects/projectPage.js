@@ -85,7 +85,7 @@ class ProjectDisplay extends Component {
           className="projectsGrid"
           style={{ "margin": "5%" }}>
           
-          <Grid.Column floated='left' color='olive'>
+          <Grid.Column floated='left' color='olive' style={this.state.edit ? {}:{display:'none'} }>
           {/* <AddProject /> */}
             <Form className='projectForm' id={this.props.cssId} onSubmit={this.props.func}>
               <h2>Add a New Project</h2>
@@ -140,12 +140,14 @@ class ProjectDisplay extends Component {
                     <Card.Description className="projectDesc">Description: {project.description}</Card.Description>
                   </Card.Content>
                   <div className='ui two buttons'>
-                    <Button basic color='blue' href="https://github.com/sparkins/">GitHub</Button>
-                    <Button basic color='blue' href="https://sparkins.github.io/ClickyGame/">Launch App</Button>
+                    <Button basic color='blue' href={project.github}>GitHub</Button>
+                    <Button basic color='blue' href={project.launchapp}>Launch App</Button>
                   </div>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>Edit Project</Button>
-                    <Button basic color='red'>Delete Project</Button>
+                  <div className='ui two buttons edit-buttons'>
+                    <Button basic color='green' style={this.state.edit ? {}:{display:'none'} }>Edit Project</Button>
+                    <Button basic color='red' style={this.state.edit ? {}:{display:'none'} }>Delete Project</Button>
+                      
+                    } 
                   </div>
                 </Card>
               </Grid.Column>
