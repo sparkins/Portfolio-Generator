@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 
+.addProject {
+    width: 20%;
+}
+
 #portfolio-container {
-    /* background-color: #f5f3f3; */
-    background-image: url(/images/background.png);
+    background-image: url(/background.png);
     border: none;
 }
 
@@ -28,4 +31,23 @@
 .projectDesc {
     /* text-align: center; */
     font-size: 14px; 
+}
+
+Form {
+    margin-left: 20px;
+    margin-top: 10px;
+    /* border-style: groove;
+    border-width: 5px;
+    border-color: blue; */
+    width: 90%;
+    height: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+Form h2 {
+    color: blue;
+    font-weight: bold;
+    font-style: italic;
 }
