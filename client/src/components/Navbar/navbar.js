@@ -10,14 +10,9 @@ class Navbar extends React.Component {
         return (
             <Container className="navbar">
                 <Header className="nav-header" as='a'>Portfolio Generator</Header>
-                <Menu.Item className="projectPage" as='a' active>Project Page</Menu.Item>
-                <Menu.Item className="profilePage" as='a'>Profile Page</Menu.Item>
-                <Menu.Item position='right'>
-                {/* <Button as='a' >Log in</Button>
-                <Button as='a'  style={{ marginLeft: '0.5em' }}>Sign Up</Button>*/}
-                </Menu.Item>
-                {/* <Button className="projectPage" as='a'>Projects Page</Button>
-                <Button className="profilePage" as='a'>Profile Page</Button> */}
+                <Menu.Item className="projectPage" as='a' active href={"/Projects"}>Project Page</Menu.Item>
+                <Menu.Item className="profilePage" as='a' href={"/profile"}>Profile Page</Menu.Item>
+                <Menu.Item position='right'></Menu.Item>
             </Container>
         );
     }

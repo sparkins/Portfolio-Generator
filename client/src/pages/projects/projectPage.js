@@ -58,8 +58,14 @@ class ProjectDisplay extends Component {
 
     let name = event.target.children[0].value;
     let description = event.target.children[1].value;
+    let image = event.target.children[2].value;
+    let github = event.target.children[3].value;
+    let launchapp = event.target.children[4].value;
+    let submitProject = {name: name, description: description, image: image, github: github, launchapp: launchapp};
 
-    return _createProject(name, description).then(ap => {
+    console.log (submitProject);
+
+    return _createProject(name, description, image, github, launchapp).then(ap => {
       let projects = [...this.state.projects, ap];
       this.setState({ projects })
     })
@@ -86,7 +92,6 @@ class ProjectDisplay extends Component {
           style={{ "margin": "5%" }}>
           
           <Grid.Column floated='left' color='olive' style={this.state.edit ? {}:{display:'none'} }>
-          {/* <AddProject /> */}
             <Form className='projectForm' id={this.props.cssId} onSubmit={this.props.func}>
               <h2>Add a New Project</h2>
               <Form.Field
@@ -119,16 +124,11 @@ class ProjectDisplay extends Component {
                 label='App Link'
                 placeholder='Enter the url to launch your app'
               />
-              <Button primary>Add Project</Button>
-              {/* id='project-submit'
-                control={Button}
-                label='Submit'
-                content={this.props.submitButton} */}
+              <Button primary onClick={this.addProject}>Add Project</Button>
               
              </Form>
             </Grid.Column>
 
-            {/* <Grid.Row columns={4}> */}
             {this.state.projects.map((project, i) => (
               <Grid.Column key={i}>
                 <Card>
