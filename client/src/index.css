@@ -6,7 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(/client/public/images/background.png);
+  background-color: azure;
+  background-image: "url(+ require('/images/background.png')";
   /* /* display: flex; */
   height: 100%;
   overflow: auto;

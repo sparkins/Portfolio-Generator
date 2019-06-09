@@ -45,7 +45,7 @@ class ProjectDisplay extends Component {
   }
 
   componentDidMount() {
-    fetch("/allprojects")
+    fetch("http://localhost:3000/allprojects")
       .then(res => res.json())
       .then(projects => this.setState({ projects }))
   }
@@ -55,7 +55,7 @@ class ProjectDisplay extends Component {
   }
 
   addProject = (event, _createProject) => {
-
+    console.log ('addProject function initiated');
     let name = event.target.children[0].value;
     let description = event.target.children[1].value;
     let image = event.target.children[2].value;
@@ -91,8 +91,8 @@ class ProjectDisplay extends Component {
           className="projectsGrid"
           style={{ "margin": "5%" }}>
           
-          <Grid.Column floated='left' color='olive' style={this.state.edit ? {}:{display:'none'} }>
-            <Form className='projectForm' id={this.props.cssId} onSubmit={this.props.func}>
+          <Grid.Column floated='left' color='teal' style={this.state.edit ? {}:{display:'none'} }>
+            <Form className='projectForm' id={this.props.id} onSubmit={this.props.addProject}>
               <h2>Add a New Project</h2>
               <Form.Field
                 id='name'
@@ -124,7 +124,7 @@ class ProjectDisplay extends Component {
                 label='App Link'
                 placeholder='Enter the url to launch your app'
               />
-              <Button primary onClick={this.addProject}>Add Project</Button>
+              <Button primary>Add Project</Button>
               
              </Form>
             </Grid.Column>

@@ -5,7 +5,7 @@
 }
 
 #portfolio-container {
-    background-image: url(/background.png);
+    /* background-image: url(/background.png); */
     border: none;
 }
 
@@ -29,16 +29,12 @@
 }
 
 .projectDesc {
-    /* text-align: center; */
     font-size: 14px; 
 }
 
 Form {
     margin-left: 20px;
     margin-top: 10px;
-    /* border-style: groove;
-    border-width: 5px;
-    border-color: blue; */
     width: 90%;
     height: 100%;
     margin-bottom: 10px;
