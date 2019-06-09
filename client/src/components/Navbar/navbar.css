@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 
 .navbar {
-    /* position: fixed; */
     width: 100% !important;
     font-family: 'Courgette', cursive;
     font-weight: bold;
@@ -16,7 +15,6 @@
 }
 
 .nav-header {
-    /* width: 50%; */
     color: white !important;
     font-size: 40px !important;
     padding-left: 250px !important;
@@ -31,6 +29,20 @@
 }
 
 .projectPage {
+    float: right;
+    color: white !important;
+    padding-right: 75px;
+    padding-top: 15px;
+}
+
+.login {
+    float: right;
+    color: white !important;
+    padding-right: 75px;
+    padding-top: 15px;
+}
+
+.signout {
     float: right;
     color: white !important;
     padding-right: 75px;
